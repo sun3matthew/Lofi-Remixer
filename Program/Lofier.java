@@ -23,8 +23,8 @@ public class Lofier
   {
     LofiDrumLibary libary = new LofiDrumLibary();
     MusicReadWrite trackOne = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/Input/"+name+".wav");
-    MusicReadWrite crack = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/DrumSamples/EasyAccess/ohShit_2.wav");
-    MusicReadWrite rainThing = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/DrumSamples/EasyAccess/rain.wav");
+    MusicReadWrite crack = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/DrumSamples/ohShit_2.wav");
+    MusicReadWrite rainThing = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/DrumSamples/rain.wav");
     //MusicReadWrite drum = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/Input/"+Dr+".wav");
     sampleRate = trackOne.getSampleRate();
     int[] soundInfo = cloneArray(trackOne.read());
