@@ -8,6 +8,7 @@ public class Lofier
   private int start;
   private ArrayList<AudioPlay> play = new ArrayList<AudioPlay>();
   private int[] finalSound;
+  private String mainPath;
   public static void main(String [] args)
   {
     Lofier run = new Lofier();
@@ -22,9 +23,11 @@ public class Lofier
   public void runShit(String name)
   {
     LofiDrumLibary libary = new LofiDrumLibary();
-    MusicReadWrite trackOne = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/Input/"+name+".wav");
-    MusicReadWrite crack = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/DrumSamples/ohShit_2.wav");
-    MusicReadWrite rainThing = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/DrumSamples/rain.wav");
+    String dir = System.getProperty("user.dir");
+    mainPath = dir.substring(0, dir.length()-7);
+    MusicReadWrite trackOne = new MusicReadWrite(mainPath+"Input/"+name+".wav");
+    MusicReadWrite crack = new MusicReadWrite(mainPath+"DrumSamples/EasyAccess/ohShit_2.wav");
+    MusicReadWrite rainThing = new MusicReadWrite(mainPath+"DrumSamples/EasyAccess/rain.wav");
     //MusicReadWrite drum = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/Input/"+Dr+".wav");
     sampleRate = trackOne.getSampleRate();
     int[] soundInfo = cloneArray(trackOne.read());
@@ -232,7 +235,7 @@ public class Lofier
   {
     int[][] drumTracks = new int[names.length][];
     for(int i = 0; i < names.length; i++)
-      drumTracks[i] = new MusicReadWrite("/Users/matthewsun/Desktop/Lofier/DrumSamples/EasyAccess/"+names[i]+".wav").read();
+      drumTracks[i] = new MusicReadWrite(mainPath+"DrumSamples/EasyAccess/"+names[i]+".wav").read();
     return drumTracks;
   }
   private void play(int[] sound, double volume)
