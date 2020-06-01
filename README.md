@@ -1,4 +1,2 @@
 # lofi-remixer
-Test
-
-test2
+java Lofier filename
